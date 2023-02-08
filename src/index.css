@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --mainColor: #ffe031;
+  --darkColor: #414141;
+  --grayColor: #a7a7a7;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.bienvenida {
+  background-color: var(--mainColor);
+}
