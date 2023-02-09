@@ -8,6 +8,7 @@ import Signup from '../pages/signup/Signup';
 import Registro from '../pages/registro/Registro';
 import Home from '../pages/home/Home';
 import RutaProtegida from '../pages/rutaProtegida/RutaProtegida';
+import LoginPhone from '../pages/loginPhone/LoginPhone';
 
 const RouteBienvenida = () => {
     return (
@@ -21,6 +22,7 @@ const RouteBienvenida = () => {
                 <Route path='/signup' element={<Signup />} />
                 <Route path='/registro' element={<Registro />} />
                 <Route path='/home' element={<RutaProtegida><Home /></RutaProtegida>} />
+                <Route path='/login-cel' element={<LoginPhone />} />
             </Routes>
         </BrowserRouter>
     )

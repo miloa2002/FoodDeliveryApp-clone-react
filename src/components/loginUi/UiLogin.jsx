@@ -79,6 +79,9 @@ const UiLogin = () => {
                 <GoogleButton onClick={handleGoogleInicio} />
             </div>
             <div>
+                <Link to={"/login-cel"}><button className="bg-green-600 p-4 text-white">Inicia sesión con tu teléfono</button></Link>
+            </div>
+            <div>
                 <p className="text-center">¿No tienes una cuenta? <Link className="font-bold" to={"/registro"}>Crea una</Link></p>
             </div>
         </div>

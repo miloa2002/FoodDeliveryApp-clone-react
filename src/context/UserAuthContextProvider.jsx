@@ -5,7 +5,9 @@ import {
     signOut,
     onAuthStateChanged,
     GoogleAuthProvider,
-    signInWithPopup
+    signInWithPopup,
+    RecaptchaVerifier,
+    signInWithPhoneNumber
 } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
 
@@ -32,6 +34,13 @@ const UserAuthContextProvider = ({ children }) => {
         return signInWithPopup(auth, googleAuthProvider)
     }
 
+    function configuracionCaptcha(numero) {
+        const recaptchaVerifier = new RecaptchaVerifier("recaptcha-container", {}, auth);
+
+        recaptchaVerifier.render();
+        return signInWithPhoneNumber(auth, numero, recaptchaVerifier);
+    }
+
     useEffect(() => {
         const inscribirse = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -42,7 +51,7 @@ const UserAuthContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <UserAuthContext.Provider value={{ user, signUp, logIn, logOut, googleInicio }}>
+        <UserAuthContext.Provider value={{ user, signUp, logIn, logOut, googleInicio, configuracionCaptcha }}>
             {children}
         </UserAuthContext.Provider>
     )
