@@ -15,3 +15,11 @@ body {
 .bienvenida {
   background-color: var(--mainColor);
 }
+
+.colorGrayDrak {
+  color: var(--darkColor);
+}
+
+.colorGray {
+  color: var(--grayColor);
+}

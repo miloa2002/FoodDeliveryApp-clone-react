@@ -24,15 +24,19 @@ const UiRegistro = () => {
     }
 
     return (
-        <div className="h-screen py-20 flex justify-between items-center flex-col w-96 mx-auto p-5">
+        <div className="h-screen py-20 flex justify-between  flex-col w-96 mx-auto p-5">
+            <h2 className="text-3xl font-bold colorGrayDrak">Crea una cuenta</h2>
             {error && <p>{error}</p>}
             <form
                 onSubmit={handleSubmit}
             >
 
-                <label htmlFor="Email">Correo: </label>
+                <label
+                    className="colorGray text-sm"
+                    htmlFor="Email">Correo:
+                </label>
                 <input
-                    className='block'
+                    className='block mb-5 w-full outline-none py-2 border-b-2'
                     type="email"
                     id='Email'
                     placeholder='correo@correo.com'
@@ -40,9 +44,12 @@ const UiRegistro = () => {
                     onChange={e => setEmail(e.target.value)}
                 />
 
-                <label htmlFor="password">Contraseña: </label>
+                <label
+                    className="colorGray text-sm"
+                    htmlFor="password"
+                >Contraseña: </label>
                 <input
-                    className='block'
+                    className='block mb-5 w-full outline-none py-2 border-b-2'
                     type="password"
                     id='password'
                     placeholder='Contraseña'
@@ -50,10 +57,14 @@ const UiRegistro = () => {
                     onChange={e => setPassword(e.target.value)}
                 />
 
-                <input type="submit" value="Ingresar" />
+                <input
+                    className="bienvenida w-full p-2 rounded-md hover:cursor-pointer hover:bg-yellow-400"
+                    type="submit"
+                    value="Crear cuenta"
+                />
             </form>
             <div>
-                <p>Ya tienes una cuenta? <Link to={"/login"}>Inicia sesión</Link></p>
+                <p className="text-center">¿Ya tienes una cuenta? <Link className="font-bold" to={"/login"}>Inicia sesión</Link></p>
             </div>
         </div>
     )

@@ -3,7 +3,9 @@ import {
     createUserWithEmailAndPassword,
     signInWithEmailAndPassword,
     signOut,
-    onAuthStateChanged
+    onAuthStateChanged,
+    GoogleAuthProvider,
+    signInWithPopup
 } from "firebase/auth";
 import { auth } from "../firebase/firebaseConfig";
 
@@ -25,6 +27,11 @@ const UserAuthContextProvider = ({ children }) => {
         return signOut(auth)
     }
 
+    function googleInicio() {
+        const googleAuthProvider = new GoogleAuthProvider();
+        return signInWithPopup(auth, googleAuthProvider)
+    }
+
     useEffect(() => {
         const inscribirse = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -35,7 +42,7 @@ const UserAuthContextProvider = ({ children }) => {
     }, [])
 
     return (
-        <UserAuthContext.Provider value={{ user, signUp, logIn, logOut }}>
+        <UserAuthContext.Provider value={{ user, signUp, logIn, logOut, googleInicio }}>
             {children}
         </UserAuthContext.Provider>
     )
