@@ -64,7 +64,7 @@ const UiRegistro = () => {
                 />
             </form>
             <div>
-                <p className="text-center">¿Ya tienes una cuenta? <Link className="font-bold" to={"/login"}>o Inicia sesión con otros metodos</Link></p>
+                <p className="text-center">¿Ya tienes una cuenta? <Link className="font-bold" to={"/"}>o Inicia sesión con otros metodos</Link></p>
             </div>
         </div>
     )

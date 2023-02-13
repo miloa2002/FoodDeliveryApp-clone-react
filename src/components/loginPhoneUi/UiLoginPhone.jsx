@@ -86,8 +86,7 @@ const UiLoginPhone = () => {
             {/*verificar*/}
             <div>
                 <h2 className="text-3xl text-center mt-5 colorGrayDrak">Verificación</h2>
-                <p className='text-center colorGray'>Ingrese el código de cuatro dígitos de SMS
-                    SMS no recibido. ¿Enviar de nuevo?</p>
+                <p className='text-center colorGray'>Ingrese el código de cuatro dígitos de SMS</p>
             </div>
 
 
