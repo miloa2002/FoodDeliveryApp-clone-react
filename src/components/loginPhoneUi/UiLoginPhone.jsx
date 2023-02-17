@@ -48,7 +48,7 @@ const UiLoginPhone = () => {
     }
 
     return (
-        <div className="h-screen py-20 flex justify-between items-center  flex-col w-96 mx-auto p-5">
+        <div className="h-screen py-20 flex justify-between items-center flex-col max-w-md mx-auto p-5">
             <div>
                 <img className='mx-auto' src={logoCelLogin} alt="login-cel-logo" width="100" />
                 <h2 className="text-3xl text-center mt-5 colorGrayDrak">Iniciar sesión</h2>

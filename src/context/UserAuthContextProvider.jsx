@@ -44,6 +44,7 @@ const UserAuthContextProvider = ({ children }) => {
     useEffect(() => {
         const inscribirse = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
+            //console.log(currentUser)
         })
         return () => {
             inscribirse();

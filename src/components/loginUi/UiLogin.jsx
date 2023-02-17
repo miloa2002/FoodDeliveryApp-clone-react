@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import GoogleButton from "react-google-button";
 import { Link, useNavigate } from "react-router-dom"
 import UseUser from "../../hook/UseUser"
+import { crearUsuario } from "../../api/user";
 
 const UiLogin = () => {
 
@@ -21,14 +22,21 @@ const UiLogin = () => {
         } catch (error) {
             setError(error.message)
         }
-
     };
+
 
     const handleGoogleInicio = async (e) => {
         e.preventDefault();
-
         try {
-            await googleInicio();
+            const { user } = await googleInicio();
+            const newUser = {
+                name: user.displayName,
+                email: user.email,
+                photoURL: user.photoURL,
+            }
+            const id = user.uid
+            await crearUsuario(newUser, id)
+            console.log(user)
             navigate("/home")
         } catch (error) {
             setError(error.message);
@@ -36,7 +44,7 @@ const UiLogin = () => {
     }
 
     return (
-        <div className="h-screen py-20 flex justify-between  flex-col w-96 mx-auto p-5">
+        <div className="h-screen py-20 flex justify-between flex-col max-w-md mx-auto p-5">
             <h2 className="text-3xl font-bold colorGrayDrak">Inicia sesión</h2>
             {error && <p>{error}</p>}
             <form

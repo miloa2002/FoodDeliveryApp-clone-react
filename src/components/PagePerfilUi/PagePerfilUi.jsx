@@ -15,6 +15,8 @@ const PagePerfilUi = () => {
     return (
         <div>
             <p>welcome {user && user.email}</p>
+            {user.rol == "admin" ? <p>Hola admin</p> : ""}
+            <img src={user.photoURL} alt="" />
 
             <button onClick={handleLogout}>Cerrar sesión</button>
         </div>

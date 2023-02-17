@@ -16,7 +16,7 @@ const UiRegistro = () => {
         setError("");
         try {
             await signUp(email, password)
-            navigate("/login")
+            navigate("/")
         } catch (error) {
             setError(error.message)
         }
@@ -24,7 +24,7 @@ const UiRegistro = () => {
     }
 
     return (
-        <div className="h-screen py-20 flex justify-between  flex-col w-96 mx-auto p-5">
+        <div className="h-screen py-20 flex justify-between flex-col max-w-md mx-auto p-5">
             <h2 className="text-3xl font-bold colorGrayDrak">Crea una cuenta</h2>
             {error && <p>{error}</p>}
             <form
