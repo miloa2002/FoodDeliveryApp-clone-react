@@ -13,12 +13,21 @@ const PagePerfilUi = () => {
     }
 
     return (
-        <div>
-            <p>welcome {user && user.email}</p>
-            {user.rol == "admin" ? <p>Hola admin</p> : ""}
-            <img src={user.photoURL} alt="" />
+        <div className="">
+            <div>
+                <img
+                    className="rounded-full mx-auto"
+                    src={user.photoURL} alt=""
+                />
+                <p className="text-center mt-2">{user.displayName}</p>
 
-            <button onClick={handleLogout}>Cerrar sesión</button>
+            </div>
+            <div className="mx-auto">
+                <button
+                    className="w-full bg-gray-100 p-3 rounded-md"
+                    onClick={handleLogout}
+                >Cerrar sesión</button>
+            </div>
         </div>
     )
 }

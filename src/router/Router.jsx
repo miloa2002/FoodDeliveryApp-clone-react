@@ -7,11 +7,13 @@ import LoginPhone from '../pages/loginPhone/LoginPhone';
 import Perfil from '../pages/perfil/Perfil';
 import Buscador from '../pages/Buscador/Buscador';
 import Ordenes from '../pages/ordenes/Ordenes';
+import Restaurante from '../pages/Restaurante/Restaurante';
 
 const Router = () => {
     return (
         <BrowserRouter>
             <Routes>
+                <Route path='/restaurante/:id' element={<RutaProtegida><Restaurante /></RutaProtegida>} />
                 <Route path='/' element={<Login />} />
                 <Route path='/registro' element={<Registro />} />
                 <Route path='/home' element={<RutaProtegida><Home /></RutaProtegida>} />

@@ -23,3 +23,6 @@ body {
 .colorGray {
   color: var(--grayColor);
 }
+.bgGray {
+  background-color: var(--grayColor);
+}
