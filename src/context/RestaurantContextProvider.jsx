@@ -7,6 +7,7 @@ const RestaurantContextProvider = ({ children }) => {
 
     const [listas, setListas] = useState([])
     const [copia, setCopia] = useState([]);
+    const [productosCarro, setProductosCarro] = useState([])
 
     const getRestaurantesData = async () => {
         try {
@@ -89,8 +90,17 @@ const RestaurantContextProvider = ({ children }) => {
         setListas(listasFiltradas)
     }
 
+    const [count, setCount] = useState(0)
+    const decremento = () => {
+        if (count === 0) return
+        setCount(count - 1)
+    }
+
+
+
+
     return (
-        <RestaurantContext.Provider value={{ listas, setListas, copia, setCopia, handleTodos, handlePizza, handlePasta, handleHamburguesa, handleMariscos, handlePostres }}>
+        <RestaurantContext.Provider value={{ listas, setListas, copia, setCopia, handleTodos, handlePizza, handlePasta, handleHamburguesa, handleMariscos, handlePostres, productosCarro, setProductosCarro, count, setCount, decremento }}>
             {children}
         </RestaurantContext.Provider>
     )

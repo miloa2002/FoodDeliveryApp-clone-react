@@ -1,9 +1,9 @@
-
+import PagePlatoUI from "../../components/PagePlatoUI/PagePlatoUI"
 
 const Plato = () => {
     return (
-        <div>
-            <h1>plato</h1>
+        <div className="h-screen py-20 flex justify-between flex-col max-w-md mx-auto p-5">
+            <PagePlatoUI />
         </div>
     )
 }

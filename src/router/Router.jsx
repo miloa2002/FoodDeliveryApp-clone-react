@@ -8,6 +8,7 @@ import Perfil from '../pages/perfil/Perfil';
 import Buscador from '../pages/Buscador/Buscador';
 import Ordenes from '../pages/ordenes/Ordenes';
 import Restaurante from '../pages/Restaurante/Restaurante';
+import Plato from '../pages/Plato/Plato';
 
 const Router = () => {
     return (
@@ -21,6 +22,7 @@ const Router = () => {
                 <Route path='/perfil' element={<RutaProtegida><Perfil /></RutaProtegida>} />
                 <Route path='/encuentra-platos' element={<RutaProtegida><Buscador /></RutaProtegida>} />
                 <Route path='/ordenes' element={<RutaProtegida><Ordenes /></RutaProtegida>} />
+                <Route path='/plato/:id' element={<RutaProtegida><Plato /></RutaProtegida>} />
             </Routes>
         </BrowserRouter>
     )
